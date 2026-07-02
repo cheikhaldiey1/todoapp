@@ -20,5 +20,11 @@ pipeline {
                  sh "npm install"
             }
         }
+        stage('itesttesnstall') {
+            steps {
+                 echo "Execution des tests...."
+                 sh "npm test"
+            }
+        }
     }
 }
