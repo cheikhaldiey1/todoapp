@@ -14,13 +14,32 @@ pipeline {
                 }
             }
         }
+        stage('Generate env') {
+            steps{
+                WithCredentials([
+                    string(credentialsId:  'app_env', variable:'APP_ENV')
+                    string(credentialsId:  'app_name', variable:'APP_NAME')
+                    string(credentialsId:  'app_port', variable:'PORT')
+                ]) {
+                    sh '''
+                        cat > .env <<EOF
+
+                        APP_NAME=${APP_NAME}
+                        APP_ENV=${APP_ENV}
+                        PORT=${PORT}
+                        
+                        EOF
+                    '''
+                }
+            }
+        }
         stage('install') {
             steps {
                  echo "Installation des dependances...."
                  sh "npm install"
             }
         }
-        stage('itesttesnstall') {
+        stage('test') {
             steps {
                  echo "Execution des tests...."
                  sh "npm test"
