@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Generate env') {
             steps{
-                WithCredentials([
-                    string(credentialsId:  'app_env', variable:'APP_ENV')
-                    string(credentialsId:  'app_name', variable:'APP_NAME')
+                withCredentials([
+                    string(credentialsId:  'app_env', variable:'APP_ENV'),
+                    string(credentialsId:  'app_name', variable:'APP_NAME'),
                     string(credentialsId:  'app_port', variable:'PORT')
                 ]) {
                     sh '''
@@ -27,7 +27,7 @@ pipeline {
                         APP_NAME=${APP_NAME}
                         APP_ENV=${APP_ENV}
                         PORT=${PORT}
-                        
+
                         EOF
                     '''
                 }
