@@ -17,9 +17,9 @@ pipeline {
         stage('Generate env') {
             steps{
                 withCredentials([
-                    string(credentialsId:  'app_env', variable:'APP_ENV'),
-                    string(credentialsId:  'app_name', variable:'APP_NAME'),
-                    string(credentialsId:  'app_port', variable:'PORT')
+                    string(credentialsId:  'APP_ENV', variable:'APP_ENV'),
+                    string(credentialsId:  'APP_NAME', variable:'APP_NAME'),
+                    string(credentialsId:  'APP_PORT', variable:'PORT')
                 ]) {
                     sh '''
                         cat > .env <<EOF
