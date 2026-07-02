@@ -10,5 +10,11 @@ pipeline {
                 }
             }
         }
+        stage('install') {
+            steps {
+                 echo "Installation des dependances...."
+                 sh "npm install"
+            }
+        }
     }
 }
