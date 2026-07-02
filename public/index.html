@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo Jenkins Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Todo Jenkins Lab</h1>
+      <p class="env-badge" id="envBadge">ENV: chargement...</p>
+    </header>
+
+    <form id="todoForm" class="todo-form">
+      <input
+        type="text"
+        id="todoInput"
+        placeholder="Ajouter une tâche..."
+        autocomplete="off"
+        required
+      />
+      <button type="submit">Ajouter</button>
+    </form>
+
+    <ul id="todoList" class="todo-list"></ul>
+
+    <footer class="app-footer">
+      <span id="todoCount">0 tâche(s)</span>
+      <button id="clearDone" type="button">Effacer terminées</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
