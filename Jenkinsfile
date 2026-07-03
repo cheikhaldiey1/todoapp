@@ -50,7 +50,7 @@ pipeline {
         always {
             echo "Nettoyage du workspace tgerminé"
         }
-        sucess {
+        success {
             echo "L'app est pret pour la prod"
 
         }
