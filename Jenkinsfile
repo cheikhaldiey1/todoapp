@@ -46,4 +46,17 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo "Nettoyage du workspace tgerminé"
+        }
+        sucess {
+            echo "L'app est pret pour la prod"
+
+        }
+        failure {
+            echo "Nope !! pas pret pour la prod"
+
+        }
+    }
 }
