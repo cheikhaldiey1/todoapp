@@ -1,3 +1,4 @@
+@Library('shared-lib')
 pipeline {
 
     agent any
@@ -45,6 +46,9 @@ pipeline {
                  echo "Execution des tests...."
                  sh "npm test"
             }
+        }
+        stage('hello') {
+            seyHello('tlm')
         }
     }
     post {
