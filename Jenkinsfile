@@ -48,7 +48,9 @@ pipeline {
             }
         }
         stage('hello') {
-            seyHello('Saluuuuuuutttt')
+            steps {
+                seyHello('Saluuuuuuutttt')
+            }
         }
     }
     post {
