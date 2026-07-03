@@ -48,7 +48,7 @@ pipeline {
             }
         }
         stage('hello') {
-            seyHello('tlm')
+            seyHello('Saluuuuuuut')
         }
     }
     post {
