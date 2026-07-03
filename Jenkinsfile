@@ -17,7 +17,7 @@ pipeline {
         stage('Generate env') {
             steps{
                 withCredentials([
-                    string(credentialsId:  'APP_ENV', variable:'APP_ENV'),
+                    string(credentialsId:  'APP_ENv', variable:'APP_ENV'),
                     string(credentialsId:  'APP_NAME', variable:'APP_NAME'),
                     string(credentialsId:  'APP_PORT', variable:'PORT')
                 ]) {
@@ -48,7 +48,7 @@ pipeline {
     }
     post {
         always {
-            echo "Nettoyage du workspace tgerminé"
+            echo "Nettoyage du workspace terminé"
         }
         success {
             echo "L'app est pret pour la prod"
