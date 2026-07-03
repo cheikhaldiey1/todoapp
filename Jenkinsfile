@@ -17,7 +17,7 @@ pipeline {
         stage('Generate env') {
             steps{
                 withCredentials([
-                    string(credentialsId:  'APP_ENv', variable:'APP_ENV'),
+                    string(credentialsId:  'APP_ENV', variable:'APP_ENV'),
                     string(credentialsId:  'APP_NAME', variable:'APP_NAME'),
                     string(credentialsId:  'APP_PORT', variable:'PORT')
                 ]) {
@@ -52,11 +52,9 @@ pipeline {
         }
         success {
             echo "L'app est pret pour la prod"
-
         }
         failure {
             echo "Nope !! pas pret pour la prod"
-
         }
     }
 }
