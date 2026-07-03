@@ -36,7 +36,7 @@ pipeline {
         stage('install') {
             steps {
                  echo "Installation des dependances...."
-                 echo "ceci a ete trigger via github"
+                 echo "ceci a ete trigger via github webhook"
                  sh "npm install"
             }
         }
